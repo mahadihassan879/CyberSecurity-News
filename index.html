@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sentinel Desk 24 | Cybersecurity Threat Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Sentinel Desk 24</p>
+        <h1>Cybersecurity dashboard for what is active, breaking, and being fixed right now.</h1>
+        <p class="lede">
+          A newsroom-style threat board covering ongoing attacks, the latest cybersecurity headlines,
+          incidents reported today, and the defender actions helping teams recover.
+        </p>
+      </div>
+      <div class="hero-panel">
+        <div class="channel-card">
+          <span class="channel-tag">Broadcast</span>
+          <h2 id="channel-name"></h2>
+          <p id="channel-summary"></p>
+          <div class="refresh-box">
+            <div>
+              <span class="label">Last refresh</span>
+              <strong id="last-refresh">Connecting...</strong>
+            </div>
+            <div>
+              <span class="label">Next refresh</span>
+              <strong id="next-refresh">In 1 hour</strong>
+            </div>
+            <button class="refresh-button" id="refresh-button" type="button">Refresh now</button>
+          </div>
+          <div class="channel-grid">
+            <div>
+              <span class="label">Lead reporter</span>
+              <strong id="lead-reporter"></strong>
+            </div>
+            <div>
+              <span class="label">Live date</span>
+              <strong id="live-date"></strong>
+            </div>
+            <div>
+              <span class="label">Focus</span>
+              <strong>Threats, response, resilience</strong>
+            </div>
+            <div>
+              <span class="label">Status</span>
+              <strong class="status-pill" id="channel-status">Loading feeds</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="metrics" id="metrics"></section>
+
+    <main class="dashboard-grid">
+      <section class="panel span-2">
+        <div class="panel-head">
+          <div>
+            <p class="section-kicker">Live posture</p>
+            <h2>Ongoing attacks and active exploitation</h2>
+          </div>
+          <p class="panel-note">Threats that appear current, continuing, or still operationally relevant.</p>
+        </div>
+        <div class="story-grid" id="ongoing-attacks"></div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-head">
+          <div>
+            <p class="section-kicker">Today</p>
+            <h2>Attacks reported today</h2>
+          </div>
+        </div>
+        <div class="timeline" id="today-attacks"></div>
+      </section>
+
+      <section class="panel span-2 accent-panel">
+        <div class="panel-head">
+          <div>
+            <p class="section-kicker">Newsroom</p>
+            <h2>Today's cybersecurity news rundown</h2>
+          </div>
+          <p class="panel-note">Presented as an original channel package with source-linked reporting cards.</p>
+        </div>
+        <div class="news-wall" id="news-rundown"></div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-head">
+          <div>
+            <p class="section-kicker">Defender response</p>
+            <h2>What people solved or contained</h2>
+          </div>
+        </div>
+        <div class="response-list" id="defender-actions"></div>
+      </section>
+
+      <section class="panel span-3">
+        <div class="panel-head">
+          <div>
+            <p class="section-kicker">Source ledger</p>
+            <h2>Verification links and editorial note</h2>
+          </div>
+        </div>
+        <div class="source-copy">
+          <p>
+            The channel, reporter identities, and on-screen packaging are original creative presentation.
+            The facts in the cards are based on the linked sources below and summarized into a dashboard format.
+          </p>
+        </div>
+        <div class="sources" id="sources"></div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
